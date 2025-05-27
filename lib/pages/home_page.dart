@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:labwork/widgets/adaptive/dynamic_bloc.dart';
+import 'package:labwork/widgets/device_block.dart';
 
 
 class HomePage extends StatelessWidget{
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget{
       body: SingleChildScrollView(
         child: Center(
           child: DynamicBlock(
-            children: List.generate(20, (i) => ListTile(title: Text('Елемент $i'))),
+            children: List.generate(20, (i) => DeviceBlock()),
             initialVisibleCount: 5,
             loadMoreCount: 5,
           ),
