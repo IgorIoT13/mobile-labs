@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import '../widgets/central_btn.dart';
-import '../widgets/input_box.dart';
 
-class RegistrationPage extends StatefulWidget{
+import 'package:labwork/widgets/adaptive/adaptive_block.dart';
+import 'package:labwork/widgets/adaptive/adaptive_button.dart';
+import 'package:labwork/widgets/adaptive/adaptive_input.dart';
+
+class RegistrationPage extends StatelessWidget {
+
   const RegistrationPage({super.key});
 
-  @override
-  State<RegistrationPage> createState() => _RegistrationPageState();
-}
-
-class _RegistrationPageState extends State<RegistrationPage> {
+  static const List<String> titles = [
+    'Email',
+    'Name',
+    'Password',
+    'Confirm Password',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -21,31 +25,50 @@ class _RegistrationPageState extends State<RegistrationPage> {
       body: Center(
         child: Column(
           children: [
-            InputBox(title: "email"),
-            InputBox(title: "Ім'я"),
-            InputBox(title: "Пароль", isPassword: true),
-            InputBox(title: "Підтвердження паролю", isPassword: true),
-            Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CenteredButton(
-                    label: "Зареєструватися",
+            AdaptiveBlock(
+              breakpoint: 5000,
+              children: [
+                AdaptiveInput(
+                  title: titles[0],
+                  controller: TextEditingController(),
+                ),
+                AdaptiveInput(
+                  title: titles[1],
+                  controller: TextEditingController(),
+                ),
+                AdaptiveInput(
+                  title: titles[2],
+                  isPassword: true,
+                  controller: TextEditingController(),
+                ),
+                AdaptiveInput(
+                  title: titles[3],
+                  isPassword: true,
+                  controller: TextEditingController(),
+                ),
+              ]
+            ),
+            AdaptiveBlock(
+              children:[
+                  AdaptiveButton(
+                    label: "Login",
                     onPressed: () {
-                      // Дія
+                      // Action for login
                     },
+                    width: 200,
+                    height: 50,
                   ),
-                  const SizedBox(width: 16), // Відступ між кнопками
-                  CenteredButton(
-                    label: "Повернутися до входу",
+                  AdaptiveButton(
+                    label: "Register",
                     onPressed: () {
-                      Navigator.pushNamed(context, '/login');
+                      Navigator.pushNamed(context, '/registration');
                     },
+                    width: 200,
+                    height: 50,
                   ),
                 ],
-              ),
-            )
-          ],
+            ),
+           ],
         ),
       ),
     );
