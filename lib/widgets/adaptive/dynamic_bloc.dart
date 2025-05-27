@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DynamicBloc extends StatefulWidget {
+class DynamicBlock extends StatefulWidget {
   final List<Widget> children;
   final int initialVisibleCount;
   final int loadMoreCount;
 
-  const DynamicBloc({
+  const DynamicBlock({
     Key? key,
     required this.children,
     this.initialVisibleCount = 5,
@@ -13,10 +13,10 @@ class DynamicBloc extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<DynamicBloc> createState() => _DynamicBlocState();
+  State<DynamicBlock> createState() => _DynamicBlockState();
 }
 
-class _DynamicBlocState extends State<DynamicBloc> {
+class _DynamicBlockState extends State<DynamicBlock> {
   late int _visibleCount;
 
   @override
