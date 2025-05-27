@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import '../widgets/state_widget.dart';
 
 class DeviceSection extends StatefulWidget {
-  const DeviceSection({super.key, required this.deviceName, required this.shortDescription});
+  const DeviceSection({
+    required this.deviceName,
+    required this.shortDescription,
+    this.status = false,
+    super.key,
+  });
   final String deviceName;
   final String shortDescription;
+  final bool status;
 
   @override
   State<DeviceSection> createState() => _DeviceSectionState();
@@ -54,7 +60,10 @@ class _DeviceSectionState extends State<DeviceSection> {
             ),
           ),
           const SizedBox(width: 16),
-          StateWidget(title: "offline", state: false),
+          StateWidget(
+            state: widget.status,
+            title: widget.status ? 'Online' : 'Offline',
+            ),
         ],
       ),
     );
