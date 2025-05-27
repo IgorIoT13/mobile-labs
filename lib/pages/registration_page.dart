@@ -20,6 +20,14 @@ class RegistrationPage extends StatelessWidget {
     'Back to Login',
   ];
 
+  void _onRegistrationPressed(BuildContext context) {
+    // Action for registration
+    // You can add your registration logic here
+  }
+  void _onBackToLoginPressed(BuildContext context) {
+    Navigator.pushNamed(context, '/login');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,17 +65,13 @@ class RegistrationPage extends StatelessWidget {
               children:[
                   AdaptiveButton(
                     label: btn[0],
-                    onPressed: () {
-                      // Action for login
-                    },
+                    onPressed: () => _onRegistrationPressed(context),
                     width: 200,
                     height: 50,
                   ),
                   AdaptiveButton(
                     label: btn[1],
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/registration');
-                    },
+                    onPressed: () => _onBackToLoginPressed(context),
                     width: 200,
                     height: 50,
                   ),
