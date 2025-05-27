@@ -21,8 +21,7 @@ class RegistrationPage extends StatelessWidget {
   ];
 
   void _onRegistrationPressed(BuildContext context) {
-    // Action for registration
-    // You can add your registration logic here
+    Navigator.pushNamed(context, '/login');
   }
   void _onBackToLoginPressed(BuildContext context) {
     Navigator.pushNamed(context, '/login');

@@ -17,8 +17,7 @@ class LoginPage extends StatelessWidget{
   ];
 
   void _onLoginPressed(BuildContext context) {
-    // Action for login
-    // You can add your login logic here
+    Navigator.pushNamed(context, '/home');
   }
   void _onRegisterPressed(BuildContext context) {
     Navigator.pushNamed(context, '/registration');
@@ -52,9 +51,7 @@ class LoginPage extends StatelessWidget{
               children:[
                   AdaptiveButton(
                     label: btn[0],
-                    onPressed: () {
-                      // Action for login
-                    },
+                    onPressed: () => _onLoginPressed(context),
                     width: 200,
                     height: 50,
                   ),
