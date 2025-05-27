@@ -11,15 +11,13 @@ class DeviceSection extends StatefulWidget {
 }
 
 class _DeviceSectionState extends State<DeviceSection> {
-  String deviceName = 'Device Name';
-  String shortDescription = 'Short description of the device.';
-
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
       padding: const EdgeInsets.all(16),
+      height: 120,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
@@ -27,13 +25,6 @@ class _DeviceSectionState extends State<DeviceSection> {
           color: Colors.grey,
           width: 2,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 6,
-            offset: Offset(0, 2),
-          ),
-        ],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
