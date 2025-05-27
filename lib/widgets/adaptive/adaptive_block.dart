@@ -18,19 +18,20 @@ class AdaptiveBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width ?? MediaQuery.of(context).size.width * 0.8,
-      height: height ?? MediaQuery.of(context).size.height * 0.8,
-      padding: padding ?? const EdgeInsets.all(16.0),
-      child: LayoutBuilder(
+    return LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth > breakpoint) {
-            return Row(children: children);
+            return Row(
+              mainAxisSize: MainAxisSize.min,
+              children: children
+            );
           } else {
-            return Column(children: children);
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              children: children
+              );
           }
         },
-      ),
-    );
+      );
   }
 }
