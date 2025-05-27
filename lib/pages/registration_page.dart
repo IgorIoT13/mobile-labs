@@ -34,7 +34,7 @@ class RegistrationPage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Registration'),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             AdaptiveBlock(
