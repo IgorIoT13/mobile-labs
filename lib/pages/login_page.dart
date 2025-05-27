@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/adaptive/adaptive_block.dart';
-import '../widgets/adaptive/adaptive_button.dart';
-import '../widgets/adaptive/adaptive_input.dart';
-
+import 'package:labwork/widgets/adaptive/adaptive_block.dart';
+import 'package:labwork/widgets/adaptive/adaptive_button.dart';
+import 'package:labwork/widgets/adaptive/adaptive_input.dart';
 
 class LoginPage extends StatelessWidget{
   const LoginPage({super.key});
+
+  static const List<String> titles = [
+    'Email',
+    'Password',
+  ];
+  static const List<String> btn = [
+    'Login',
+    'Register',
+  ];
+
+  void _onLoginPressed(BuildContext context) {
+    // Action for login
+    // You can add your login logic here
+  }
+  void _onRegisterPressed(BuildContext context) {
+    Navigator.pushNamed(context, '/registration');
+  }
 
   @override
   Widget build(BuildContext context){
@@ -22,11 +38,11 @@ class LoginPage extends StatelessWidget{
               breakpoint: 5000,
               children: [
                 AdaptiveInput(
-                  title: "Email",
+                  title: titles[0],
                   controller: TextEditingController(),
                 ),
                 AdaptiveInput(
-                  title: "Password",
+                  title: titles[1],
                   isPassword: true,
                   controller: TextEditingController(),
                 ),
@@ -35,7 +51,7 @@ class LoginPage extends StatelessWidget{
             AdaptiveBlock(
               children:[
                   AdaptiveButton(
-                    label: "Login",
+                    label: btn[0],
                     onPressed: () {
                       // Action for login
                     },
@@ -43,10 +59,8 @@ class LoginPage extends StatelessWidget{
                     height: 50,
                   ),
                   AdaptiveButton(
-                    label: "Register",
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/registration');
-                    },
+                    label: btn[1],
+                    onPressed:() => _onRegisterPressed(context),
                     width: 200,
                     height: 50,
                   ),
