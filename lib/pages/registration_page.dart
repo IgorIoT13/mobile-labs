@@ -15,6 +15,11 @@ class RegistrationPage extends StatelessWidget {
     'Confirm Password',
   ];
 
+  static const List<String> btn = [
+    'Registration',
+    'Back to Login',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +56,7 @@ class RegistrationPage extends StatelessWidget {
             AdaptiveBlock(
               children:[
                   AdaptiveButton(
-                    label: "Login",
+                    label: btn[0],
                     onPressed: () {
                       // Action for login
                     },
@@ -59,7 +64,7 @@ class RegistrationPage extends StatelessWidget {
                     height: 50,
                   ),
                   AdaptiveButton(
-                    label: "Register",
+                    label: btn[1],
                     onPressed: () {
                       Navigator.pushNamed(context, '/registration');
                     },

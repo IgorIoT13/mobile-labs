@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:labwork/pages/login_page.dart';
+import 'package:labwork/pages/registration_page.dart';
 // import 'pages/home_page.dart';
 // import 'package:labwork/pages/registration_page.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const LoginPage(),
       routes: {
-        // '/register': (context) => const RegistrationPage(),
+        '/register': (context) => const RegistrationPage(),
         // '/home': (context) => const HomePage(),
         // '/profile': (context) => const ProfilePage(),
         // '/device': (context) => const DevicePage(),
