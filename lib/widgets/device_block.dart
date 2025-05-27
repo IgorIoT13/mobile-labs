@@ -16,7 +16,7 @@ class DeviceBlock extends StatelessWidget{
       ),
       child: AdaptiveBlock(
         children: [
-          Column(
+          AdaptiveBlock(
             children: [
               Image.asset('assets/images/device.jpg', width: 100, height: 100),
               const DeviceTextBlock(
